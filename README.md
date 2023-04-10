@@ -6,3 +6,9 @@ Split up a PGN file that contains multiple games.
 ```bash
 python split.py -i "input.pgn" -o "output_dir"
 ```
+
+## Merge
+Merge multiple PGNs into a single file by merging variations. Uses a `glob` pattern to find PGN files.
+```bash
+ython merge-pgn.py -i "pgn_dir/*pgn_pattern*" -o "output.pgn"
+```
