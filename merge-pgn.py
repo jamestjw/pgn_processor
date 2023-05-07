@@ -9,13 +9,18 @@ import sys
 import argparse
 from pathlib import Path
 import glob
+import re
 
 
 # Sort based on i first, break ties using filename
 def path_sort_key(p: Path):
     last = p.stem.split()[-1]
+    m = re.search(r"#(\d)+", last)
     if last.isnumeric():
         i = int(last)
+    # elif (m := re.search(r"#(\d)+", last)):
+    elif m:
+        i = int(m.groups(0)[0])
     else:
         i = 0
     return (i, p.stem)
