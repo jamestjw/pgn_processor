@@ -18,7 +18,7 @@ def get_pgn_name(p: Path) -> str:
 
 
 def get_chapter_name(p: Path) -> str:
-    return p.stem.split("-")[0].strip()
+    return p.stem.split(" - ")[0].strip()
 
 
 def main():
