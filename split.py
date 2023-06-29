@@ -39,7 +39,7 @@ def process_pgn_file(filename, output_dir: Path):
 def save_game(game: list, output_dir):
     white = next(filter(lambda x: x.startswith("[White"), game)).split('"')[1]
     black = next(filter(lambda x: x.startswith("[Black"), game)).split('"')[1]
-    output_name = f"{white} - {black}.pgn".replace("/", " or ")
+    output_name = f"{white} -- {black}.pgn".replace("/", " or ")
     game_txt = "".join(game)
 
     save_path = output_dir / output_name
